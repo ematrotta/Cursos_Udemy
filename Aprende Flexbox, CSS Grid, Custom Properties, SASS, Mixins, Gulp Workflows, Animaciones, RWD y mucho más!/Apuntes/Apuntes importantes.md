@@ -1,6 +1,6 @@
 # **Apuntes importantes del curso**
 
-## **Glosario**
+## **Indice**
 - [Shortcuts](#Shortcuts)
 - [Introducción a HTML](#sección-2---introducción-a-html---qué-es-etiquetas-y-básicos)
 - [Introducción a CSS](#sección-3---introducción-a-css)
@@ -12,6 +12,7 @@
 - [Selectores CSS](#sección-10---selectores-css---todo-lo-que-tenes-que-saber)
 - [Introducción a Responsive Web Design](#sección-11---introducción-a-responsive-web-design)
 - [Ecommerce - Agregando Media Queries](#sección-12---ecommerce-agregando-media-queries-para-convertirlo-en-responsive)
+- [Sitio Web para audífonos](#sección-13---sitio-Web-para-audífonos)
 
 
 ## **Shortcuts**
@@ -21,6 +22,10 @@
 2. Vista preliminar de archivo .md: Ctrl+Shift+v
 3. Mantener apretado Alt y seleccionar todas las lineas que se quieran modificar con el mismo texto en simultaneo
 4. Ctrl+l: Seleccionar toda la linea sobre la que estoy posicionado
+
+## Otras herramientas
+1. Para publicar los proyectos usaremos [Netlify](https://app.netlify.com/)
+2. Practicar con Flexbox: [Froggy](https://flexboxfroggy.com/#es)
 
 ## **Sección 2 - Introducción a HTML - Qué es, etiquetas y básicos**
 
@@ -114,7 +119,8 @@
 ### Normalizar CSS
     Cada navegador agrega sus propios estilos por lo que esto podría generar errores si se abriera la misma página desde navegadores distintos.
     Por ello es que se suele utilizar frameworks/herramientas como:
-        https://necolas.github.io/normalize.css/
+        
+[Link descargar normalize.css](https://necolas.github.io/normalize.css/)
 
 ### Display CSS
     Todos ya tienen uno por default
@@ -327,8 +333,6 @@ Es posible utilizar todos los enfoques pero se recomienda siempre usar 1, máxim
             </datalist>
         </div>
 ## **Sección 8 - Flexbox: Básicos, propiedades y más**
-- Datos de interes:
-    * https://flexboxfroggy.com/#es
 ### justify-content
 #### Cuando flex-direction:row;
 Los elementos se alinean horizontalmente. Los posibles valores que puede tomar justify-content son los siguientes:
@@ -939,4 +943,100 @@ Tips:
 - Es ideal que cada elemento modificado con media queries se haga debajo de donde esta el primer elemento y no a lo último de la hoja de estilos ya que esto tiene desventajas tales como:
     - El .css se carga todo primero y después a lo último se tiene que re-convertir todo el HTML.
     - Es menos legible
+## **Sección 13 - Sitio Web para audífonos**
 
+### Introducción a Custom Properties
+Se configuran al **inicio del archivo** css del siguiente modo y permite definir valores a través de variables que usaremos luego:
+
+    :root{
+        --fuentePrincipal: 'Roboto', sans-serif;
+        --fuenteSecundaria: 'Lato', sans-serif;
+    }
+
+Dentro de las devtools aparecerá del siguiente modo:
+![Ejemplo de vista custom properties root](./img/custom-properties-root.png)
+
+El modo de utilizarlo es el siguiente:
+
+    body{
+        font-family: var(--fuentePrincipal)
+    }
+
+Siempre se utiliza var(...)
+
+Sirve especialmente para hacer escalar el código. En este caso, si a futuro quisieramos cambiar la fuenta general, lo podemos hacer facilmente desde las custom properties
+
+### Setear un degradado sobre el texto
+
+    .degradado-verde{
+        /* Esto esta definiendo que el color del contenedor del texto tome ese color */
+        background: linear-gradient(to right,var(--primario) 0%, var(--secundario) 100%);
+        /* Pero esto que sigue permite asignar ese background directamente al texto */
+        color: transparent;
+        /* Esta forma es para que lo tome chrome */
+        -webkit-background-clip: text;
+        /* Esta otra para que lo tomen otros navegadores */
+        background-clip: text;
+    }
+
+### Transform y Transition
+
+#### Transform
+Hay muchas maneras de transformar temporalmente un elemento:
+
+- Modificar la escala del elemento
+
+        .modelo:hover{
+            transform: scale(1.1);
+        }
+
+- Rotar el elemento:
+
+        .modelo:hover{
+            transform: rotate(7deg);
+        }
+
+- Se pueden agregar multiples
+
+        .modelo:hover{
+            transform: rotate(7deg) scale(1.1);
+        }
+
+#### Transition
+
+Para poder seleccionar a qué atributo quiero aplicar ese transform, debo colocar en el selector estatico lo siguiente:
+
+- Esto hara que el transform aplique a todos los atributos que comprende el selector de CSS con la palara "all" seguido de cuánto quiero que dure la misma:
+
+        .modelo {
+            background-size: 15rem;
+            transition: all 300ms;
+        }
+
+    [IMPORTANTE] Esto se considera una mala práctica
+
+- Para que aplique a una/varias propiedades en particular:
+
+        .modelo {
+            transition-property: transform, background-size;
+            transition-duration: 300ms;
+        }
+
+        .modelo:hover{
+            transform: scale(1.1);
+            background-size: 30rem;
+        }
+### Imagenes avif y webp como Backgorund
+
+Para esto se debe utilizar una script de js que internamente usa la libreria [Modernizr](https://modernizr.com/)
+
+Script
+[codigoconjuan/imagenes.js](https://gist.github.com/codigoconjuan/3bbdf0f2920cd9c65187128dd1c032cc)
+
+Este script que agregamos al código, inserta en la etiqueta html todos los tipos de imagenes soportadas por el navegador con el cual se abre el documento como clases:
+
+![clases imagenes js](./img/clases_imagenes_js.png)
+
+Estas clases que se agregan, luego las podremos seleccionar dentro de nuestro código CSS
+
+Ver bien como se esta aplicando en el archivo styles.css
