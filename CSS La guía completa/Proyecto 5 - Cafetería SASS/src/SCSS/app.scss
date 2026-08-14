@@ -1,0 +1,11 @@
+@use 'base';
+@use 'header';
+@use 'inicio';
+@use 'footer';
+@use 'internas';
+
+
+
+// Siempre se deben compilar al final por si hay alguna propiedad css que sobre-escribir
+@use 'utilidades';
+

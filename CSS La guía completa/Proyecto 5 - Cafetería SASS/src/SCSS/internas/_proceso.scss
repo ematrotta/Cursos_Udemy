@@ -1,0 +1,64 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.proceso-cafe {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @include m.tablet {
+        display: flex;
+        gap: v.$separacion;
+        align-items: center;
+
+        // flex:1 es para que ocupen el mismo espacio si es que poseen la propiedad de flex
+        .imagen,
+        .texto {
+            flex: 1;
+        }
+
+        // Cualquiera de estas 2 maneras es correcta
+        // &:nth-child(2n)
+        &:nth-child(even) {
+            // Esto permite alinear el texto y la imagen con el orden que prefiera
+            // Opcion 1 ---------------
+            // .texto{
+            //     order: 1;
+            // }
+            // .imagen{
+            //     order: 2;
+            // }
+            // Opcion 2 ---------------
+            // .texto{
+            //     order: -1;
+            // }
+            // Opcion 3 ---------------
+            flex-direction: row-reverse;
+        }
+    }
+
+
+
+
+    .texto {
+        margin-top: 1rem;
+
+        h3 {
+            margin: 0;
+            text-align: left;
+            color: v.$primario;
+
+            // Esta es una linea que aparece justo debajo del texto
+            &::after {
+                content: '';
+                display: block;
+                width: 50%;
+                height: 5px;
+                background-color: v.$secundario;
+            }
+
+        }
+    }
+}

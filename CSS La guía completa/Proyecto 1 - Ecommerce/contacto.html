@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce - Contacto</title>
+    <!-- Hoja de estilos css -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/app.css">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="nombre-sitio text-center">Tienda <span>Muebles</span></h1>
+    </header>
+
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="blog.html">Blog</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+
+
+    <main class="contenido-principal contenedor">
+        <h2 class="text-center">Contacto</h2>
+
+        <form class="formulario-contacto">
+            <fieldset>
+                <legend>Tus datos</legend>
+                <div class="campo">
+                    <label for="nombre">Nombre: </label>
+                    <input id="nombre" type="text" placeholder="Coloca tu nombre">
+                </div>
+                <div class="campo">
+                    <label for="asunto">Asunto: </label>
+                    <input id="asunto" type="text" placeholder="Coloca tu asunto">
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail: </label>
+                    <input id="email" type="email" placeholder="Coloca tu email">
+                </div>
+                <div class="campo">
+                    <label for="telefono">Telefono: </label>
+                    <input id="telefono" type="tel" placeholder="Coloca tu teléfono">
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje: </label>
+                    <textarea name="mensaje" id="mensaje" placeholder="Coloca tu mensaje"></textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>País</legend>
+                <div class="campo">
+                    <label for="pais">País</label>
+                    <select name="pais" id="pais">
+                        <option value="0" disabled selected>-- Seleccione --</option>
+                        <option value="MX">México</option>
+                        <option value="PR">Perú</option>
+                        <option value="CO">Colombia</option>
+                        <option value="AR">Argentina</option>
+                        <option value="CL">Chile</option>
+                        <option value="ES">España</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Información extra</legend>
+                <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input type="radio" id="cliente" name="tipo" value="cliente">
+                </div>
+                <div class="campo">
+                    <label for="proveedor">Proveedor</label>
+                    <input type="radio" id="proveedor" name="tipo" value="proveedor">
+                </div>
+                <div class="campo">
+                    <label for="categoria">Categoriías de Interés</label>
+                    <input type="text" list="categorias" name="categorias">
+                    <datalist id="categorias">
+                        <option value="Cocina">
+                        <option value="Recamaras">
+                        <option value="Oficina">
+                        <option value="Interior">
+                        <option value="Exterior">
+                    </datalist>
+                </div>                
+            </fieldset>
+            <!-- Estas son 2 formas iguales de hacer lo mismo -->
+            <!-- <button type="submit">Enviar Formulario</button> -->
+            <input class="btn" type="submit" value="Enviar Formulario">
+        </form>
+
+
+    </main>
+    <footer class="site-footer">
+        <div class="grid-footer contenedor">
+            <div>
+                <h3>Categorías</h3>
+                <nav class="footer-menu">
+                    <a href="#">Cocina</a>
+                    <a href="#">Oficina</a>
+                    <a href="#">Jardín</a>
+                    <a href="#">Cochera</a>
+                    <a href="#">Dormitorios</a>
+                </nav>
+            </div>
+            <div>
+                <h3>Sobre Nosotros</h3>
+                <nav class="footer-menu">
+                    <a href="#">Nuestra Historia</a>
+                    <a href="#">Misión, Visión y Valores</a>
+                    <a href="#">Carreras</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos del servicio</a>
+                </nav>
+            </div>
+            <div>
+                <h3>Soporte</h3>
+                <nav class="footer-menu">
+                    <a href="#">Preguntas frecuentes</a>
+                    <a href="#">Ayuda en línea</a>
+                    <a href="#">Confianza y Seguridad</a>
+                </nav>
+            </div>
+        </div>
+        <p class="copyright text-center">Todos los derechos reservados, TiendaMuebles</p>
+    </footer>
+</body>
+
+</html>

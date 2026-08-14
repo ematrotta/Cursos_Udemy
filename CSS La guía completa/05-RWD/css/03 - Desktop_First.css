@@ -1,0 +1,23 @@
+/* Desktop First */
+/* Primero consideramos el codigo css según una pantalla desktop*/
+.oferta{
+    background-color: #00446e;
+    padding: 2rem;
+    text-align: center;
+    max-width: 60rem;
+    margin: 0 auto;
+
+}
+
+.precio{
+    font-size: 4rem;
+    margin: 0;
+}
+
+/* Luego vamos ajustando a resoluciones cada vez más pequeñas */
+
+@media (max-width:600px){
+    .oferta{
+        max-width: 100%;
+    }
+}

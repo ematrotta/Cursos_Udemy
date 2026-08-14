@@ -1,0 +1,9 @@
+.imagen>img{
+    max-width: 100%;
+    display: block;
+    margin: 0;
+}
+.imagen>p{
+    background-color: red;
+    margin: 0;
+}

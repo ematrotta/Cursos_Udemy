@@ -1,0 +1,74 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    padding: 5rem 0;
+    position: relative;
+    background-size: cover;
+    @include m.tablet {
+        min-height: 70rem;
+    }
+
+
+    // Con el & hacemos que el ::before aplique directamente al header, sino por defecto le agregará un espacio
+    &::before{
+        content: '';
+        background-color: v.$negro;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .6;
+
+
+    };
+
+    .contenido-header{
+        // Esto permite que este elemento vaya adelante del before
+        position: relative;
+
+        h1{
+            color: v.$blanco;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: v.$separacion;
+
+            @include m.tablet {
+                margin-top: calc(v.$separacion * 2);
+            }
+
+        }
+
+    };
+}
+
+// Header de cada página
+.header-inicio{
+    background-image: url(../img/header_inicio.jpg);
+        background-repeat: no-repeat;
+}
+
+.header-nosotros{
+    background-image: url(../img/header_nosotros.jpg);
+        background-repeat: no-repeat;
+}
+.header-proceso{
+    background-image: url(../img/header_proceso.jpg);
+    background-repeat: no-repeat;
+}
+
+.header-menu{
+    background-image: url(../img/header_menu.jpg);
+    background-repeat: no-repeat;
+}
+
+.header-galeria{
+    background-image: url(../img/header_galeria.jpg);
+    background-repeat: no-repeat;
+}
+.header-contacto{
+    background-image: url(../img/header_contacto.jpg);
+    background-repeat: no-repeat;
+}
+
