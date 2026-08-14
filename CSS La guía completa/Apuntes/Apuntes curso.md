@@ -236,7 +236,7 @@ Cuando se configura un grid y hay 2 columnas por ejemplo, una de ellas con una i
         Si se descarga desde google fonts, se pueden seleccionar varias fuentes y añadirlas al HTML o al archivo CCS directamente
 
         La forma de usar las propiedades de la misma, se muestran dentro del mísmo panel:
-![Cómo usar las fonts](./README/img/Fonts-Como%20usarlas.png)
+![Cómo usar las fonts](./img/Fonts-Como%20usarlas.png)
 
 ### Unidades
     En algunas propiedades se pueden utilizar números negativos como es el caso de los márgenes que pueden tener -20px por ejemplo.
@@ -378,7 +378,7 @@ Alinea los elementos sobre el eje vertical
 4. flex-end: alinea los elementos abajo de todo.
 5. center: lo centra vericalmente en el padre.
 6. baseline (poco usado): Si uno de los elementos hijos es más chico que otro, se traza una linea base sobre ellos y los alinea:
-![Ejemplo align-items_baseline](./README/img/align-items_baseline.png)
+![Ejemplo align-items_baseline](./img/align-items_baseline.png)
 #### Cuando flex-direction:column;
 Alinea los elementos sobre el eje horizontal
 1. stretch (default): Se estiran todos los elementos a todo el ancho disponible disponible.
@@ -412,7 +412,7 @@ Anteriormente, para determinar el gap se debía restar el flex-basis - el tamañ
 - **Se agrega sobre el padre**
 
 - nowrap (default): Esto hace que si los hijos exceden el limite del contenedor padre, se superpondrán a él en lugar de crear nuevas lineas:
-![Ejemplo flex-wrap: nowrap](./README/img/flex-wrap_nowrap.png)
+![Ejemplo flex-wrap: nowrap](./img/flex-wrap_nowrap.png)
 - wrap: Permite el salto de linea/columna (dependiendo de flex-direction)
 
 ### flex-grow
@@ -422,7 +422,7 @@ Anteriormente, para determinar el gap se debía restar el flex-basis - el tamañ
 
 - flex-grow: 0; (default)
 
-    ![Ejemplo flex-grow](./README/img/flex-grow.png)
+    ![Ejemplo flex-grow](./img/flex-grow.png)
 
 ### flex-shrink
 - Es el factor de contracción (contrario a flex-grow)
@@ -430,7 +430,7 @@ Anteriormente, para determinar el gap se debía restar el flex-basis - el tamañ
 - **Se aplica sobre el hijo**
 
 A medida que la pantalla se achica o la cantidad de elementos en el contenedor va aumentando, es en base a este valor que se van contrayendo:
-![Ejemplo flex-shrink](./README/img/flex-shrink.png)
+![Ejemplo flex-shrink](./img/flex-shrink.png)
 
 ### flex-shorthand
 - Es flex-grow, flex-shrink y flex-basis en un solo comando
@@ -464,11 +464,11 @@ Se puede utilizar principalmente cuando se quiere ubicar una celda en posición 
 
 Sin grid-auto-flow:
 
-![Ejemplo sin grid-auto-flow](./README/img/sin_grid-auto-flow.png)
+![Ejemplo sin grid-auto-flow](./img/sin_grid-auto-flow.png)
 
 Con grid-auto-flow:
 
-![Ejemplo Con grid-auto-flow](./README/img/con_grid-auto-flow.png)
+![Ejemplo Con grid-auto-flow](./img/con_grid-auto-flow.png)
 
 ### grid gap
 Es buena práctica eliminar el margin si se va a aplicar gap sobre la tabla para evitar que el espacio en el item dentro de la grid sea más paqueño.
@@ -489,7 +489,7 @@ Permite asignar nombres a cada una de las celdas del grid.
 
 Existe una manera de mostrar los nombres de las areas desde las herramientas de desarrollador del navegado:
 
-![Ver grid Template areas en Developer Tools](./README/img/grid-template-areas_1.png)
+![Ver grid Template areas en Developer Tools](./img/grid-template-areas_1.png)
 
 Se puede complementar con **grid-template-columns** para designar los tamaños
 
@@ -545,7 +545,7 @@ ACLARACIÓN IMPORTANTE: El tamaño de las columnas se setea en la última fila n
 
     - **auto-fill**: Intenta por default crear **todas las columnas posibles** con un ancho igual para todos los items según el **espacio disponible** aunque queden vacías.
 
-    ![Ejemplo usando grid y auto-fill](./README/img/auto-fill_1.png)
+    ![Ejemplo usando grid y auto-fill](./img/auto-fill_1.png)
 
     Se usa de la siguiente manera:
 
@@ -556,7 +556,7 @@ ACLARACIÓN IMPORTANTE: El tamaño de las columnas se setea en la última fila n
 
     - **auto-fit**: Crea una columna por cada item dentro del grid sin tener en cuenta el espacio vacío.
 
-    ![Ejemplo usando grid y auto-fill](./README/img/auto-fit_1.png)
+    ![Ejemplo usando grid y auto-fill](./img/auto-fit_1.png)
 
     Se usa de la siguiente manera:
 
@@ -579,11 +579,11 @@ ACLARACIÓN IMPORTANTE: El tamaño de las columnas se setea en la última fila n
 
         Valor máximo:
 
-        ![Auto-fit - valor maximo](./README/img/auto-fit_valor_maximo.png)
+        ![Auto-fit - valor maximo](./img/auto-fit_valor_maximo.png)
 
         Valor mínimo:
 
-        ![Auto-fit - valor minimo](./README/img/auto-fit_valor_minimo.png)
+        ![Auto-fit - valor minimo](./img/auto-fit_valor_minimo.png)
 
 ## **Sección 10 - Selectores CSS - Todo lo que tenes que saber**
 
@@ -957,7 +957,7 @@ Tips:
 - Siempre es conveniente ir haciendo el sitio web responsive a medida que se va creando el HTML. NO a lo último.
 - Importante el uso de las Developer Tools para trabajar: Allí se puede seleccionar el elemento a modificar y ver en qué archivo .css y en qué linea del mismo, ese elemento esta siendo modificado.
 
-![Ejemplo de Modificación de elemento](./README/img/modificacion-elemento-DevTools.png)
+![Ejemplo de Modificación de elemento](./img/modificacion-elemento-DevTools.png)
 
 - Es ideal que cada elemento modificado con media queries se haga debajo de donde esta el primer elemento y no a lo último de la hoja de estilos ya que esto tiene desventajas tales como:
     - El .css se carga todo primero y después a lo último se tiene que re-convertir todo el HTML.
@@ -973,7 +973,7 @@ Se configuran al **inicio del archivo** css del siguiente modo y permite definir
     }
 
 Dentro de las devtools aparecerá del siguiente modo:
-![Ejemplo de vista custom properties root](./README/img/custom-properties-root.png)
+![Ejemplo de vista custom properties root](./img/custom-properties-root.png)
 
 El modo de utilizarlo es el siguiente:
 
@@ -1054,7 +1054,7 @@ Script
 
 Este script que agregamos al código, inserta en la etiqueta html todos los tipos de imagenes soportadas por el navegador con el cual se abre el documento como clases:
 
-![clases imagenes js](./README/img/clases_imagenes_js.png)
+![clases imagenes js](./img/clases_imagenes_js.png)
 
 Estas clases que se agregan, luego las podremos seleccionar dentro de nuestro código CSS
 
@@ -1462,7 +1462,7 @@ Debemos para ello agregar una clave adicional en el archivo package.json:
 
 Una vez agregado, automáticamente al compilar agregará en el archivo .css lo que haga falta para que funcione con otros navegadores:
 
-![Imagen Autoprefixer](./README/img/autoprefixer.png)
+![Imagen Autoprefixer](./img/autoprefixer.png)
 
 Para este curso, setearemos en el package.json dentro de la clave "browserslist" los siguientes items:
 - La ultima versión del navegador que se utiliza
@@ -1490,7 +1490,7 @@ Se a llama a través del comando:
 
 La siguiente imagen muestra cómo se debe crear el nombre del archivo para que desde un archivo de inicio de SASS (app.scss) se compile todo en un mismo .css. Para ello es primordial el "_"
 
-![Imagen archivo SASS incluido en otro](./README/img/archivo_sass_incluido.png)
+![Imagen archivo SASS incluido en otro](./img/archivo_sass_incluido.png)
 
 1. Dentro del .sass principal, debemos importar el otro de este modo:
 
@@ -1771,7 +1771,7 @@ La linea que contiene la siguiente sentencia debe colocarse el "." para indicar 
 
     .pipe(sourcemaps.write('.'))
 
-![Source Map](./README/img/gulp_sourcemap.png)
+![Source Map](./img/gulp_sourcemap.png)
 
 Se creará además el archivo app.css.map junto con el archivo app.css
 
