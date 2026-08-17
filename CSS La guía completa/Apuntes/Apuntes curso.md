@@ -18,6 +18,7 @@
 - [Nucleus - Creando un proyecto desde 0 con BEM](#sección-16---nucleus-creando-un-proyecto-desde-0-con-bem)
 - [Introducción a SASS y GULP](#sección-17---introducción-a-sass-y-gulp)
 - [Cafetería - Creando un proyecto de 0 con SASS y Gulp](#sección-19---cafetería---creando-un-proyecto-completo-con-sass-y-gulp)
+- [DeliveryApp - BEM y SASS](#sección-20---delivery-app-bem-y-sass)
 
 
 ## **Shortcuts**
@@ -37,6 +38,7 @@
 3. [Node.js](https://nodejs.org/en/download)
 4. [Gulp](https://gulpjs.com/docs/en/getting-started/quick-start/)
 5. [Can I Use](https://caniuse.com/) : Permite validar qué funciones, atributos y caracteristicas de nuestro desarrollo son compatibles con todos los navegadores existentes
+6. [Generador de vectores](https://getwaves.io/): Permite descargar vectores para adicionar en tu página
 
 ## **Sección 2 - Introducción a HTML - Qué es, etiquetas y básicos**
 
@@ -1797,6 +1799,51 @@ Luego lo agregamos el gulp file dentro de los pluggins de postcss:
             .pipe(sourcemaps.write('.'))
             .pipe(dest('./build/css'));
     }
+
+## **Sección 20 - Delivery App: BEM y SASS**
+
+Para cumplir con la sintaxis de BEM usando SASS este sería el modo correcto
+
+HTML:
+
+        <header class="header contenedor">
+            <div class="header__logo">
+                <img src="build/img/logo.svg" alt="logo delivery app">
+            </div>
+            <nav class="navegacion">
+                <a href="#" class="navegacion__link">Iniciar sesión</a>
+                <a href="#" class="navegacion__link">Crear cuenta</a>
+                <a href="#" class="navegacion__link navegacion__link-registrar">Registrar restaurante</a>
+            </nav>
+        </header>
+
+SCSS:
+
+    .header{
+
+        color:red;
+
+        &__logo{
+            color: green;
+        }
+
+    }
+
+CSS:
+
+    .header {
+        color: red;
+    }
+    .header__logo {
+        color: blue;
+    }
+
+### Función de SCSS darken()
+
+Permite oscurecer de 0 a 100% un color pasado por parámetro:
+
+    box-shadow: 0px 0px 2.6rem -.8rem darken(v.$grisClaro,20%);
+
 
 
 
