@@ -19,6 +19,8 @@
 - [Introducción a SASS y GULP](#sección-17---introducción-a-sass-y-gulp)
 - [Cafetería - Creando un proyecto de 0 con SASS y Gulp](#sección-19---cafetería---creando-un-proyecto-completo-con-sass-y-gulp)
 - [DeliveryApp - BEM y SASS](#sección-20---delivery-app-bem-y-sass)
+- [PodcastApp](#sección-21---podcastapp)
+- [AirbnbApp - BEM y SASS](#sección-22---airbnb-bem-y-sass)
 
 
 ## **Shortcuts**
@@ -1843,6 +1845,65 @@ CSS:
 Permite oscurecer de 0 a 100% un color pasado por parámetro:
 
     box-shadow: 0px 0px 2.6rem -.8rem darken(v.$grisClaro,20%);
+
+### Función de SCSS lighten()
+Permite aclarar de 0 a 100% un color pasado por parámetro:
+
+    box-shadow: 0px 0px 2.6rem -.8rem lihgten(v.$grisClaro,20%);
+
+## **Sección 21 - PodcastApp**
+
+### Z-index
+
+Es una propiedad CSS que se utiliza para traer al frente algún elemento. Lo ideal es que vaya de 100 en 100 para mantener un orden.
+
+## **Sección 22 - Airbnb: BEM y SASS**
+
+### Carrousel de imágenes
+
+- Las imagenes tienen que tener un ancho fijo. No se las puede setear con "fr" por ejemplo.
+
+        .lugares {
+            &__grid {
+                display: grid;
+                grid-template-columns: repeat(4, 30rem);
+                column-gap: 4rem;
+                // Permite OCULTAR todo lo que este por fuera/se sale del contenido del view port sobre el eje Y
+                overflow-y: hidden;
+                // Permite hacer scroll de todo lo que este en el eje X
+                overflow-x: scroll;
+                // Esto informa qué tipo de scroll va a tener
+                scroll-snap-type: x mandatory;
+            }
+        }
+
+        .lugar{
+            // Como al objeto padre le colocamos los overflows y el tipo de scroll. Al hijo vamos a decirle, en qué parte del scroll quiero que aparezcan
+            scroll-snap-align: center;
+        }
+
+Existen distintos valores para **scroll-snap-align**:
+- start o left
+- center
+- end o right
+
+Podemos agregar esto mismo dentro de un mismo mixin declarando que todos los hijos van a tener la propiedad correspondiente
+
+    @mixin scrollHorizontal {
+        // Permite OCULTAR todo lo que este por fuera/se sale del contenido del view port sobre el eje Y
+        overflow-y: hidden;
+        // Permite hacer scroll de todo lo que este en el eje X
+        overflow-x: scroll;
+        // Esto informa qué tipo de scroll va a tener
+        scroll-snap-type: x mandatory;
+
+        // Esto significa que al primer nivel de hijos se le van a incluir los siguientes atributos
+        > *{
+            // Como al objeto padre le colocamos los overflows y el tipo de scroll. Al hijo vamos a decirle, en qué parte del scroll quiero que aparezcan
+            scroll-snap-align: center;
+        }
+    }
+        
 
 
 
