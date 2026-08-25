@@ -21,7 +21,7 @@
 - [DeliveryApp - BEM y SASS](#sección-20---delivery-app-bem-y-sass)
 - [PodcastApp](#sección-21---podcastapp)
 - [AirbnbApp - BEM y SASS](#sección-22---airbnb-bem-y-sass)
-
+- [Real State - Sitio de ventas de casas de lujo](#sección-23---real-state-sitio-de-ventas-de-casas-de-lujo)
 
 ## **Shortcuts**
 1. Duplicar lineas:
@@ -1903,7 +1903,67 @@ Podemos agregar esto mismo dentro de un mismo mixin declarando que todos los hij
             scroll-snap-align: center;
         }
     }
-        
+
+## **Sección 23 - Real State: Sitio de ventas de casas de lujo**
+
+### Transparentar un color:
+
+Esto se encuentra deprecado
+
+    .header{
+        background-image: linear-gradient(to right,transparentize(v.$primario,.1) 0%,transparentize(v.$primario,.1) 100%),url(../img/header_bg.jpg);
+    }
+
+La nueva manera es la siguiente
+
+    .header{
+        background-image: linear-gradient(to right,color.adjust(v.$primario,$alpha: -0.1) 0%,color.adjust(v.$primario,$alpha: -0.1) 100%),url(../img/header_bg.jpg);
+    }
+
+### Usar bucle "@for" en SASS
+
+        @for $i from 1 through 6 {
+            $imagen: "../img/propiedad_"+$i+".jpg";
+            &:nth-child(#{$i}) &__imagen{
+                background-image: url($imagen);
+                background-repeat: no-repeat;
+
+            }
+        }
+    
+### Usar "@if" en SASS
+
+    @mixin heading($salto: false){
+        font-weight: 400;
+
+        span{
+            font-weight: 700;
+            @if ($salto){
+                display: block;
+            }
+        }
+    }
+
+### Añadir scroll lento o con profundidad
+
+Utilizamos js para ello modificando el valor de background-position-y de forma dinámica:
+
+    const imagenes = document.querySelectorAll('.propiedad__imagen');
+
+    // Window es la que contiene las propiedades y los metodos que conciernen al scroll
+    window.addEventListener('scroll',() => {
+        const scroll = this.scrollY / 20;
+
+        imagenes.forEach((imagen)=>{
+
+            imagen.style.backgroundPositionY = `${scroll}px`;
+
+        })
+    })
+
+
+
+
 
 
 

@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use "sass:color";
+
+.propiedades{
+    margin-top: 5rem;
+
+    @include m.tablet {
+        margin-top: 10rem;
+    }
+
+    &__heading{
+        @include m.heading;
+    }
+
+    &__grid{
+        @include m.grid(1,2rem);
+        @include m.tablet {
+            @include m.grid(3,2rem);
+        }
+    }
+
+}
+
+.propiedad{
+    background-color: v.$blanco;
+    &__imagen{
+        // Esto sería para que cada cuadrado de propiedad me quede bien proporcionado
+        // Horizontal/Vertical
+        aspect-ratio: 10/6;
+        background-size: auto 150%;
+        position: relative;
+    }
+
+    &__nombre{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+    }
+
+    // Asignamos con un bucle for cada una de las background image
+    @for $i from 1 through 6 {
+        $imagen: "../img/propiedad_"+$i+".jpg";
+        &:nth-child(#{$i}) &__imagen{
+            background-image: linear-gradient(to bottom,color.adjust(v.$negro,$alpha: -1) 0%,color.adjust(v.$negro,$alpha: -0.3) 100%),url($imagen);
+            background-repeat: no-repeat;
+
+        }
+    }
+
+    &__contenido{
+        padding: 2rem;
+    }
+
+    &__texto{
+        margin-bottom: 0;
+
+    }
+    &__precio{
+        font-size: 3rem;
+        margin: 0;
+    }
+    &__enlace{
+        @include m.boton(v.$primario,v.$blanco);
+        display: block;
+        text-transform: uppercase;
+    }
+
+}
