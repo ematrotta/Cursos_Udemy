@@ -22,6 +22,8 @@
 - [PodcastApp](#sección-21---podcastapp)
 - [AirbnbApp - BEM y SASS](#sección-22---airbnb-bem-y-sass)
 - [Real State - Sitio de ventas de casas de lujo](#sección-23---real-state-sitio-de-ventas-de-casas-de-lujo)
+- [Carolina SPA](#sección-24---carlina-spa)
+- [Meeti](#sección-25---meeti)
 
 ## **Shortcuts**
 1. Duplicar lineas:
@@ -41,6 +43,7 @@
 4. [Gulp](https://gulpjs.com/docs/en/getting-started/quick-start/)
 5. [Can I Use](https://caniuse.com/) : Permite validar qué funciones, atributos y caracteristicas de nuestro desarrollo son compatibles con todos los navegadores existentes
 6. [Generador de vectores](https://getwaves.io/): Permite descargar vectores para adicionar en tu página
+7. [Swipper](https://swiperjs.com/): Framework para hacer slides multi-imagen con javascript
 
 ## **Sección 2 - Introducción a HTML - Qué es, etiquetas y básicos**
 
@@ -1960,6 +1963,95 @@ Utilizamos js para ello modificando el valor de background-position-y de forma d
 
         })
     })
+
+## **Sección 24 - Carlina Spa**
+
+### Enlaces con iconos html y buenas prácticas
+
+Se recomienda colocar un texto dentro del enlace que este encapsulado en un span y luego al span darle TODAS las propiedades CSS posibles para ocultarlo:
+
+Ejemplo:
+
+    <a class="sociales__enlace" href="https://pinterest.com">
+        <span class="sociales__accesible">Pinterest</span>
+    </a>
+
+    &__accesible {
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip:rect(0,0,0,0);
+        display: block;
+        border: 0;
+
+    }
+
+### Imagen que se mueve dentro del contenedor: background.attachment
+
+Para dar el efecto de que la imagen de fondo se mueve se hace simplemente con una sola linea sobre el CSS:
+
+
+    .cita{
+        background-image: url(../img/bg_citas.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        padding: 5rem 0;
+        text-align: center;
+
+        // Esto permite darle el efecto de que la imagen se mueve dentro de su contenedor
+        background-attachment: fixed;
+    }
+
+### Crear un slider: swiper
+
+Es una librería de JavaScript
+Abrimos el link de la pagina que se encuentra entre los enlaces relevantes y 
+1. "Get start"
+2. Se puede usar npm install swiper pero es más sencillo usar CDN (Content Delivery Network, osea adjuntar un link directo)
+3. Crear archivo .js:
+
+        window.swiper = new Swiper({
+            el: '.slider__contenedor',
+            slideClass: 'slider__slide',
+            createElements: true,
+            autoplay:{
+                // Para que se mueva automáticamente cada 5 segundos
+                delay: 5000
+            },
+            // Permite que si ya llegó a la última, retorne a la primera
+            loop:true,
+            // Permite agregar viñetas de página abajo
+            pagination:true,
+            // permite agregar flechas a los lados
+            navigation:true
+
+        });
+
+Hay más propiedades aplicables y se pueden consultar en la página de swiper
+
+4. Crear el selector CSS con las siguientes caracteristicas:
+       
+        .slider{
+
+            &__slide{
+                height: 100%;
+                flex-shrink: 0;
+                width: 100%;
+                position: relative;
+                transition-property: transform;
+            }
+        }
+
+## **Sección 25 - Meeti**
+
+
+
+
+
+
 
 
 
