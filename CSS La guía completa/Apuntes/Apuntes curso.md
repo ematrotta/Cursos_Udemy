@@ -23,7 +23,7 @@
 - [AirbnbApp - BEM y SASS](#sección-22---airbnb-bem-y-sass)
 - [Real State - Sitio de ventas de casas de lujo](#sección-23---real-state-sitio-de-ventas-de-casas-de-lujo)
 - [Carolina SPA](#sección-24---carlina-spa)
-- [Meeti](#sección-25---meeti)
+- [Escuela de cocina](#sección-26---escuela-de-cocina)
 
 ## **Shortcuts**
 1. Duplicar lineas:
@@ -2045,7 +2045,7 @@ Hay más propiedades aplicables y se pueden consultar en la página de swiper
             }
         }
 
-## **Sección 25 - Meeti**
+## **Sección 26 - Escuela de cocina**
 
 
 

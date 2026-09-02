@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.aside {
+
+    &__mapa {
+        width: 100%;
+        height: auto;
+    }
+
+    &__informacion {
+        background-color: v.$secundario;
+        padding: 2rem;
+        text-align: center;
+
+    }
+
+    &__heading{
+        font-weight: 700;
+        font-size: 3rem;
+        font-family: v.$fuentePrincipal;
+        margin: 1rem 0;
+    }
+
+    &__heading,
+    &__texto{
+        color: v.$blanco;
+    }
+
+    &__label{
+        font-weight: 700;
+    }
+
+
+}

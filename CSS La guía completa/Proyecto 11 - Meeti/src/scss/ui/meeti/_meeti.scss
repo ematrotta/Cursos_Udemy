@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.meeti {
+    &__heading {
+        @include m.heading;
+        color: v.$negro;
+        margin-top: 5rem;
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+
+    &__grid {
+        margin-top: 5rem;
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+        }
+    }
+    &__bloque{
+        @include m.tablet {
+            grid-column: 1/3;
+        }
+    }
+
+    &__imagen {
+        width: 100%;
+        height: auto;
+    }
+}
