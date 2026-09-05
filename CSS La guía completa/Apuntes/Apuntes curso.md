@@ -23,7 +23,7 @@
 - [AirbnbApp - BEM y SASS](#sección-22---airbnb-bem-y-sass)
 - [Real State - Sitio de ventas de casas de lujo](#sección-23---real-state-sitio-de-ventas-de-casas-de-lujo)
 - [Carolina SPA](#sección-24---carlina-spa)
-- [Escuela de cocina](#sección-26---escuela-de-cocina)
+- [Escuela de cocina](#sección-27---guitarla)
 
 ## **Shortcuts**
 1. Duplicar lineas:
@@ -476,6 +476,8 @@ Sin grid-auto-flow:
 Con grid-auto-flow:
 
 ![Ejemplo Con grid-auto-flow](./img/con_grid-auto-flow.png)
+
+El valor que podemos usar es "dense" para que el resto de las celdas ocupen el lugar vacío
 
 ### grid gap
 Es buena práctica eliminar el margin si se va a aplicar gap sobre la tabla para evitar que el espacio en el item dentro de la grid sea más paqueño.
@@ -2045,7 +2047,7 @@ Hay más propiedades aplicables y se pueden consultar en la página de swiper
             }
         }
 
-## **Sección 26 - Escuela de cocina**
+## **Sección 27 - GuitarLA**
 
 
 
