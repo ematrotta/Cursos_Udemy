@@ -35,6 +35,7 @@
 5. Panel para configurar Snippets: Ctrl + Shift + P
 6. Ctrl+D: Selecciona una a uno los textos debajo que coincidan con lo seleccionado.
 7. Ctrl+Shift+L: Selecciona de una sola vez, los textos debajo que coincidan con lo seleccionado.
+8. Ctrl+enter Saltar de linea mientras se esta en una etiqueta
 
 ## Otras herramientas
 1. Para publicar los proyectos usaremos [Netlify](https://app.netlify.com/)
@@ -2048,6 +2049,59 @@ Hay más propiedades aplicables y se pueden consultar en la página de swiper
         }
 
 ## **Sección 27 - GuitarLA**
+
+### Keyframes
+NO es una transición, sino que es una ANIMACIÓN
+
+
+    .header__guitarra{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        animation-name: mostrarImagen;
+        /* Tiempo que debe demorar en terminar */
+        animation-duration: 1s;
+        /* Tiempo de demora para que arranque */
+        animation-delay: 0s;
+        /* Lo mismo que transition*/
+        animation-timing-function: ease-in-out;
+        /* Cuántas veces queres que suceda la animación */
+        animation-iteration-count: 1;
+
+        /* Short-cut duration-function-delay-count-name*/
+        /* animation: 1s ease-in-out 0s 1 mostrarImagen; */
+    }
+
+
+    @keyframes mostrarImagen{
+        /* Voy definiendo el tiempo 0% 50% 100%*/
+        0%{
+            opacity: 0;
+            /* Para que se mueva del lado izquierdo */
+            transform: translateX(-10rem);
+
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0rem);
+
+        }
+    }
+
+### Mostrar cierta cantidad de lineas en un texto que es muy extenso
+
+    .entrada__texto{
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+
+    }
 
 
 
